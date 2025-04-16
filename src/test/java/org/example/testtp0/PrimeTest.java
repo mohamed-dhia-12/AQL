@@ -15,7 +15,7 @@ class PrimeTest {
     }
 
     @Test
-    void isPrime_ReturnsTrue() {
+    void isPrime_ReturnTrue() {
         assertTrue(Prime.isPrime(2), "2 est un nombre premier");
         assertTrue(Prime.isPrime(3), "3 est un nombre premier");
         assertTrue(Prime.isPrime(5), "5 est un nombre premier");
