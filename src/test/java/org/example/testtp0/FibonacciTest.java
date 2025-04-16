@@ -1,5 +1,7 @@
-package org.example;
+package org.example.testtp0;
 
+import org.example.tp0.Fibonacci;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,7 +9,7 @@ class FibonacciTest {
 
     @Test
     void fibonacci_ReturnsCorrectValue_ForKnownInputs() {
-        assertEquals(0, Fibonacci.fibonacci(0), "F(0) doit être 0");
+        Assertions.assertEquals(0, Fibonacci.fibonacci(0), "F(0) doit être 0");
         assertEquals(1, Fibonacci.fibonacci(1), "F(1) doit être 1");
         assertEquals(1, Fibonacci.fibonacci(2), "F(2) doit être 1");
         assertEquals(2, Fibonacci.fibonacci(3), "F(3) doit être 2");

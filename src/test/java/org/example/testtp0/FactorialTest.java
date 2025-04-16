@@ -1,5 +1,7 @@
-package org.example;
+package org.example.testtp0;
 
+import org.example.tp0.Factorial;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,7 +9,7 @@ class FactorialTest {
 
     @Test
     void factorial_Returns1_If0() {
-        assertEquals(1, Factorial.factorial(0), "0! doit être égal à 1");
+        Assertions.assertEquals(1, Factorial.factorial(0), "0! doit être égal à 1");
     }
 
     @Test

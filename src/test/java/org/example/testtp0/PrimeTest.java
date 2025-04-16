@@ -1,5 +1,7 @@
-package org.example;
+package org.example.testtp0;
 
+import org.example.tp0.Prime;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,7 +9,7 @@ class PrimeTest {
 
     @Test
     void isPrime_ReturnsFalseNegative() {
-        assertFalse(Prime.isPrime(-5), "-5 n'est pas un nombre premier");
+        Assertions.assertFalse(Prime.isPrime(-5), "-5 n'est pas un nombre premier");
         assertFalse(Prime.isPrime(-3), "0 n'est pas un nombre premier");
         assertFalse(Prime.isPrime(-10), "1 n'est pas un nombre premier");
     }
