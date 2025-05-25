@@ -1,12 +1,14 @@
 package org.example.testtp2;
-import org.example.tp2.ServiceException;
-import org.example.tp2.UserService;
-import org.example.tp2.Utilisateur;
-import org.example.tp2.UtilisateurApi;
+
+import org.example.tp2.EXO2.ServiceException;
+import org.example.tp2.EXO2.UserService;
+import org.example.tp2.EXO2.Utilisateur;
+import org.example.tp2.EXO2.UtilisateurApi;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -17,19 +19,14 @@ public class UserServiceTest {
 
     @Test
     public void testCreerUtilisateur() throws ServiceException {
-        // Création d'un nouvel utilisateur
-        Utilisateur utilisateur = new Utilisateur("Jean", "Dupont", "jeandupont@email.com");
-
-        // Configuration du comportement du mock
-        doNothing().when(utilisateurApiMock).creerUtilisateur(utilisateur);
-
-        // Création du service avec le mock
+        // Arrange
+        Utilisateur utilisateur = new Utilisateur("Jean", "Dupont", "jean.dupont@example.com");
         UserService userService = new UserService(utilisateurApiMock);
 
-        // Appel de la méthode à tester
+        // Act
         userService.creerUtilisateur(utilisateur);
 
-        // Vérification de l'appel à l'API
-        verify(utilisateurApiMock, times(1)).creerUtilisateur(utilisateur);
+        // Assert : Vérifie que l'appel a bien eu lieu
+        verify(utilisateurApiMock).creerUtilisateur(utilisateur);
     }
 }

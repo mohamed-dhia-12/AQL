@@ -1,4 +1,4 @@
-package org.example.tp2;
+package org.example.TP2;
 
 public class Calculatrice {
     private int result;
@@ -7,7 +7,6 @@ public class Calculatrice {
         result = a + b;
         return result;
     }
-
     public int getResult() {
         return result;
     }

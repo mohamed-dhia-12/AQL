@@ -1,34 +1,25 @@
 package org.example.testtp2;
-import org.example.tp2.Calculatrice;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.MockitoJUnitRunner;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-@ExtendWith(MockitoExtension.class)  // Utilisation de MockitoExtension pour JUnit 5
+@RunWith(MockitoJUnitRunner.class)
 public class CalculatriceTest {
 
     @Mock
-    private Calculatrice calculatrice;  // Le mock de Calculatrice
+    private org.example.TP2.Calculatrice calculatrice;
 
     @Test
     public void testAdditionner() {
-        // Définition du comportement de la méthode "additionner"
-        when(calculatrice.additionner(2, 3)).thenReturn(5);
+        when(calculatrice.additionner(3, 3)).thenReturn(6);
 
-        // Appel de la méthode à tester
-        int resultat = calculatrice.additionner(2, 3);
+        int resultat = calculatrice.additionner(3, 3);
 
-        // Vérification du résultat
-        assertEquals(5, resultat);
+        assert(resultat == 6);
 
-        // Vérification que la méthode "additionner" a été appelée avec les arguments 2 et 3
-        verify(calculatrice).additionner(2, 3);
-
-        // Vérification qu'aucune autre méthode n'a été appelée sur l'objet après l'appel de la méthode "additionner"
+        verify(calculatrice).additionner(3, 3);
         verifyNoMoreInteractions(calculatrice);
     }
 }

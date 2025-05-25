@@ -1,9 +1,9 @@
 package org.example.tp2;
-
 public class Utilisateur {
     private String prenom;
     private String nom;
     private String email;
+    private int id;
 
     public Utilisateur(String prenom, String nom, String email) {
         this.prenom = prenom;
@@ -11,7 +11,7 @@ public class Utilisateur {
         this.email = email;
     }
 
-    // Getters
+    // Getters et Setters
     public String getPrenom() {
         return prenom;
     }
@@ -24,16 +24,11 @@ public class Utilisateur {
         return email;
     }
 
-    // Setters (optionnel)
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public int getId() {
+        return id;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setId(int id) {
+        this.id = id;
     }
 }
